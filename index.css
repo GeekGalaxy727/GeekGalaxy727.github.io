@@ -1,7 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Happy+Monkey);
 
+body{
+  background-color:#8533ff;
+}
+
 h1{
   font-family: 'Happy Monkey', cursive;
   color: #9fff80;
   font-size: 200%;
+}
+
+#headerbox{
+  margin: 0 auto;
+  width: 50%;
 }
