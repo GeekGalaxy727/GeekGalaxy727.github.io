@@ -11,6 +11,7 @@ h1{
 }
 
 #headerbox{
+  padding: 5px 0px 5px 0px;
   width: 100%;
   text-align: center;
   background-color:#000066;
