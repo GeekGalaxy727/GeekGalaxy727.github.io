@@ -11,8 +11,50 @@ h1{
 }
 
 #headerbox{
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px 15px 0px;
   width: 100%;
   text-align: center;
   background-color:#000066;
+  margin-bottom:15px;
+  font-size: 30px;
 }
+
+#footer img{
+	width:auto;
+	height:300px;
+	display: inline-block;
+	
+	}
+	
+#list a{
+	color: #262626;
+	font-size:25px;
+	margin-top: -5px;
+	margin-bottom: -5px;
+	text-align: left;
+	display: block;
+	}
+	
+#profilePhotoBox{
+	float:left;
+}
+
+#profilePhotoBox img{
+	width:400px;
+	margin-right: 20px;
+	}
+	
+	
+#footer{
+	margin-top: 20px;
+	text-align: center;
+	}
+	
+
+#mainParagraph{
+	font-size: 17px;
+	color: #000000;
+	}
+	
+
+	
