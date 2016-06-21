@@ -79,7 +79,7 @@ margin:auto;
 	margin-top:-5px;
 }
 
-#stars{
+.stars a img{
 	width:20%;
 	height:auto; 
 }	
