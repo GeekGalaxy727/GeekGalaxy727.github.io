@@ -102,3 +102,7 @@ nav ul li{
 nav li ul{
 	position:absolute;
 	}
+	
+ul.sub-menu{
+	display:none;
+	}
