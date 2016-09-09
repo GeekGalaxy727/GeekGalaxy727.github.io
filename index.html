@@ -190,10 +190,10 @@
 	$(document).ready(function(){
 		$('.dropdown' ).hover(
 			function(){
-				$(this).children('.sub-menu').slow('slow');
+				$(this).children('.sub-menu').show('slow');
 			},
 			function(){
-				$(this).children('sub-menu').slow('slow');
+				$(this).children('sub-menu').hide('slow');
 			}
 		);
 		function stop(){
