@@ -110,4 +110,5 @@ ul.sub-menu{
 .sub-menu li a{
 	color:#ffffff
 	z-index:1;
+	position: relative;
 	}
