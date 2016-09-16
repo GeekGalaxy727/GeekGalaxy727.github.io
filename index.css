@@ -105,10 +105,11 @@ nav li ul{
 	
 ul.sub-menu{
 	display:none;
+	background-color:#ffffff;
 	}
 
 .sub-menu li a{
-	color:#ffffff;
+	color:#000000;
 	z-index:1;
 	position: relative;
 	padding: 0px 100px 100px 0px;
