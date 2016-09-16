@@ -105,5 +105,8 @@ nav li ul{
 	
 ul.sub-menu{
 	display:none;
-	color:#000000
+	}
+
+.sub-menu li a{
+	color:#ffffff
 	}
