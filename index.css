@@ -82,7 +82,8 @@ margin:auto;
  */
 
 #heroesOfOlympus{
-	text-align:center;	
+	display:block;
+	margin:auto;	
 	}
 .stars a img{
 	width:90%;
