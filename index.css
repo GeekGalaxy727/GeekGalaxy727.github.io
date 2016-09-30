@@ -82,8 +82,8 @@ margin:auto;
  */
 
 #heroesOfOlympus planet a img{
-	display:block;
-	margin:auto;
+	margin-left:auto;
+	margin-right:auto;
 	}
 
 .stars a img{
