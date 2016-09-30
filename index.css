@@ -81,9 +81,9 @@ margin:auto;
 }
  */
 
-#heroesOfOlympus planet a img{
-	margin-left:500;
-	margin-right:auto;
+#heroesOfOlympusPlanet a img{
+	display:block;
+	margin:auto;
 	}
 
 .stars a img{
