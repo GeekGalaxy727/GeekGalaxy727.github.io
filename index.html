@@ -237,7 +237,7 @@
 		);
 		
 		(function($) {
-		  $.fn.textWidth = function(){
+        $.fn.textWidth = function(){
             var calc = '<div style="display:none; width:100%">' + $(this).text() + '</div>';
              $('body').append(calc);
              var width = $('div')[0].scrollWidth;
@@ -245,6 +245,7 @@
              $('body').find('div:last').remove();
             return width;
         };
+       
         $.fn.marquee = function(args) {
             var that = $(this);
             var textWidth = that.textWidth(),
@@ -264,7 +265,7 @@
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
-            
+           
             function go() {
                 if(!that.length) return dfd.reject();
                 if(width == stop) {
@@ -281,9 +282,9 @@
                 }
                 that.css('text-indent', width + 'px');
                 if(args.leftToRight) {
-                    width++;
+                    width+=10;
                 } else {
-                    width--;
+                    width-= 10;
                 }
                 setTimeout(go, args.speed);
             };
@@ -298,11 +299,8 @@
             go();
             return dfd.promise();
         };
+                $('h1').marquee();
     })(jQuery);
-
-$('#headerbox').marquee();
-		
-	});
 	
 
 </script>
