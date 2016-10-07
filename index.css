@@ -4,10 +4,11 @@ body{
   background-color:#8533ff;
 }
 
-h1{
+#headerbox h1{
   font-family: 'Happy Monkey', cursive;
   color: #9fff80;
   font-size: 200%;
+  padding-left:0px !important!;
 }
 
 #headerbox{
