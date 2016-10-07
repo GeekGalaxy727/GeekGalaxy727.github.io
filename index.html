@@ -18,9 +18,10 @@
 </head>
 
 <body>
-  <div id="headerbox"> 
+  	<div style="display:block; width:100%; white-space: nowrap; overflow: visible;">
     <h1>The Galaxy of Geeks</h1>
   </div>
+
 
   
   <div class="container">
@@ -237,10 +238,11 @@
 		
 		(function($) {
 		  $.fn.textWidth = function(){
-            var calc = '<span style="display:none; white-space: nowrap; font-size: '+$(this).css('font-size')+'">' + $(this).text() + '</span>';
+            var calc = '<div style="display:none; width:100%">' + $(this).text() + '</div>';
              $('body').append(calc);
-             var width = $('body').find('span:last').width();
-             $('body').find('span:last').remove();
+             var width = $('div')[0].scrollWidth;
+                          
+             $('body').find('div:last').remove();
             return width;
         };
         $.fn.marquee = function(args) {
