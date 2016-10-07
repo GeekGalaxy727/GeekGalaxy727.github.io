@@ -8,8 +8,11 @@ body{
   font-family: 'Happy Monkey', cursive;
   color: #9fff80;
   font-size: 200%;
-  padding-left:0px !important!;
 }
+marquee {
+  overflow: hidden;
+}
+
 
 #headerbox{
   padding: 5px 0px 15px 0px;
