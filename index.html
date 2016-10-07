@@ -18,9 +18,10 @@
 </head>
 
 <body>
-  	<div style="display:block; width:100%; white-space: nowrap; overflow: visible;">
-    <h1>The Galaxy of Geeks</h1>
-  </div>
+  	<marquee behavior="scroll"
+  		direction="left" id="headerbox">
+    	<h1>The Galaxy of Geeks</h1>
+  	</marquee>
 
 
   
@@ -236,71 +237,7 @@
 			}
 		);
 		
-		(function($) {
-        $.fn.textWidth = function(){
-            var calc = '<div style="display:none; width:100%">' + $(this).text() + '</div>';
-             $('body').append(calc);
-             var width = $('div')[0].scrollWidth;
-                          
-             $('body').find('div:last').remove();
-            return width;
-        };
-       
-        $.fn.marquee = function(args) {
-            var that = $(this);
-            var textWidth = that.textWidth(),
-                offset = that.width(),
-                width = offset,
-                css = {
-                    'text-indent' : that.css('text-indent'),
-                    'overflow' : that.css('overflow'),
-                    'white-space' : that.css('white-space')
-                },
-                marqueeCss = {
-                    'text-indent' : width,
-                    'overflow' : 'hidden',
-                    'white-space' : 'nowrap'
-                },
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false }, args),
-                i = 0,
-                stop = textWidth*-1,
-                dfd = $.Deferred();
-           
-            function go() {
-                if(!that.length) return dfd.reject();
-                if(width == stop) {
-                    i++;
-                    if(i == args.count) {
-                        that.css(css);
-                        return dfd.resolve();
-                    }
-                    if(args.leftToRight) {
-                        width = textWidth*-1;
-                    } else {
-                        width = offset;
-                    }
-                }
-                that.css('text-indent', width + 'px');
-                if(args.leftToRight) {
-                    width+=10;
-                } else {
-                    width-= 10;
-                }
-                setTimeout(go, args.speed);
-            };
-            if(args.leftToRight) {
-                width = textWidth*-1;
-                width++;
-                stop = offset;
-            } else {
-                width--;            
-            }
-            that.css(marqueeCss);
-            go();
-            return dfd.promise();
-        };
-                $('h1').marquee();
-    })(jQuery);
+	
 	
 
 </script>
