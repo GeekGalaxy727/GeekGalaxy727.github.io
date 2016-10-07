@@ -9,10 +9,15 @@ body{
   color: #9fff80;
   font-size: 200%;
 }
-marquee {
-  overflow: hidden;
-}
 
+
+
+.marquee {
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
 
 #headerbox{
   padding: 5px 0px 15px 0px;
