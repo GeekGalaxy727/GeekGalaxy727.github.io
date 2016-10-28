@@ -141,5 +141,7 @@ ul.sub-menu{
 	}
 	
 .footerImgs{
-	
+	width:400px;
+	height:auto;
+	display:inline-block;
 	}
