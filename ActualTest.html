@@ -1,0 +1,254 @@
+<html>
+<head>
+<title></title>
+<!-- begin quiz script -->
+<script>
+function finish() {
+	var ext = '.html';
+	var results = new Array("none","Wizard","Demigod","Demi wizard","Fairy tail wizard","Jedi");
+	var nums = new Array(6);
+	for(var i = 0; i < nums.length; i++) nums[i] = 0;
+	for(var i = 1; i <= 5; i++) {
+		var q = document.forms['quiz'].elements['question_'+i];
+		if(q[0].type=='checkbox') {
+			var n = 0;
+		}
+		for(var j = 0; j < q.length; j++) {
+			if(q[j].checked) {
+				var a = q[j].value.split(',');
+				for(var k = 0; k < a.length; k++) {
+					nums[a[k]]++;
+				}
+				if(q[j].type=='radio') break;
+				else n++;
+			}
+			if(j == q.length-1&&q[j].type=='radio') {nums[0]++;}
+		}
+		if(q[0].type=='checkbox'&&((document.forms['quiz'].elements['question_'+i+'_min']&&n<document.forms['quiz'].elements['question_'+i+'_min'].value)||(document.forms['quiz'].elements['question_'+i+'_max']&&n>document.forms['quiz'].elements['question_'+i+'_max'].value))) nums[0]++;
+	}
+	var j = new Array('0');
+	for (i in nums) if(nums[i]>nums[j[0]]){j=new Array(''+i);} else if(nums[i]==nums[j[0]])j[j.length] = i;
+	//var o = '';for(var i in results)o+=results[i]+'='+nums[i]+'\n';
+	//alert(o);
+	if(nums[0]!=0) {
+		alert('You missed or incorrectly answered '+nums[0]+' questions!');
+	}
+	else if(j[0]==0) {
+		alert('No result could be determined.');
+	}
+	else {
+		location = results[j[0]]+ext;
+	}
+}
+</script>
+<!-- end quiz script -->          
+</head>
+<body>
+<!-- begin quiz html -->
+<form name="quiz" action="javascript:finish();">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td width="34%">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>How wild/rebellious are you?</strong> (Choose from 1 to 5)
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_1" type="checkbox" value="2"> Have you met me? I’m crazy.
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_1" type="checkbox" value="3"> Eh
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_1" type="checkbox" value="1"> Only Griffindors
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_1" type="checkbox" value="5"> The only non rebels are sith
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_1" type="checkbox" value="4"> I like to think I'm a good person but my friends are all crazy
+</font>
+</td>
+</tr>
+</table>
+<br /><table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td width="34%">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>What powers do you have/want?</strong> (Choose from 1 to 5)
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_2" type="checkbox" value="1"> Magic
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_2" type="checkbox" value="2"> Power of the gods
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_2" type="checkbox" value="3"> Magic and ADHD
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_2" type="checkbox" value="5"> The force
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_2" type="checkbox" value="4"> Spells
+</font>
+</td>
+</tr>
+</table>
+<br /><table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td width="34%">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Are you good at school?</strong> (Choose from 1 to 5)
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_3" type="checkbox" value="2"> Are you kidding me
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_3" type="checkbox" value="1"> OF COURSE
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_3" type="checkbox" value="3"> Depends
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_3" type="checkbox" value="5"> Flight school
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_3" type="checkbox" value="4"> I didn't attend
+</font>
+</td>
+</tr>
+</table>
+<br /><table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td width="34%">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Where do you live/want to live?</strong> (Choose from 1 to 5)
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_4" type="checkbox" value="1"> Hogwarts
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_4" type="checkbox" value="2"> Camp half blood/Jupiter, Hotel Valhalla, or the Brooklyn house 
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_4" type="checkbox" value="3"> Between America and London
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_4" type="checkbox" value="5"> Temple
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_4" type="checkbox" value="4"> Guild dorms
+</font>
+</td>
+</tr>
+</table>
+<br /><table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td width="34%">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>What weapon do you fight with?</strong> (Choose from 1 to 5)
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_5" type="checkbox" value="2"> Swords, daggers, occasional spear
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_5" type="checkbox" value=""> Wand
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_5" type="checkbox" value="3"> Wand and Enchanted wepons
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_5" type="checkbox" value="5"> Light saber
+</font>
+</td>
+</tr><tr>
+<td>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input name="question_5" type="checkbox" value="4"> Spells/magic items
+</font>
+</td>
+</tr>
+</table>
+<br /> <INPUT TYPE="submit" value="Finish">
+ <INPUT TYPE="reset" value="Reset">
+</form>
+<!-- end quiz html -->          
+</body>
+<html>
